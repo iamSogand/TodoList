@@ -19,7 +19,7 @@ function clearInput() {
     userInput.value = '';
   }
 
-function deleteItemHandler() {
+function deleteItemHandler(itemId) {
     let itemIndex = 0;
     for (const item of items) {
       if (item.id === itemId) {
@@ -45,6 +45,8 @@ function addItemHandler() {
   };
 
   items.push(newItem);
+  renderNewItemElement(newItem.id, newItem.title);
+  clearInput();
 }
 
 addItemBtn.addEventListener('click', addItemHandler);
