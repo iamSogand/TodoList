@@ -15,7 +15,9 @@ function renderNewItemElement(id, title) {
   listRoot.append(newItemElement);
 }
 
-
+function clearInput() {
+    userInput.value = '';
+  }
 
 function deleteItemHandler() {
     let itemIndex = 0;
