@@ -1,4 +1,8 @@
 const addItemBtn = document.getElementById('addBtn');
+const userInput = document.getElementById('input');
+const entryText = document.getElementById('entry-text');
+
+const items = [];
 
 function renderNewItemElement(id, title) {
   const newItemElement = document.createElement('li');
@@ -11,7 +15,20 @@ function renderNewItemElement(id, title) {
   listRoot.append(newItemElement);
 }
 
-function deleteItemHandler() {}
+
+
+function deleteItemHandler() {
+    let itemIndex = 0;
+    for (const item of items) {
+      if (item.id === itemId) {
+        break;
+      }
+      itemIndex++;
+    }
+    items.splice(itemIndex, 1);
+    const listRoot = document.getElementById('item-list');
+    listRoot.children[itemIndex].remove();
+}
 
 function addItemHandler() {
   const titleValue = userInput.value;
