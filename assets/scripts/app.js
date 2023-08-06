@@ -7,8 +7,8 @@ const items = [];
 function renderNewItemElement(id, title) {
   const newItemElement = document.createElement('li');
   newItemElement.innerHTML = `
-      <div >
-      <li class="list-group-item">${title}</li>
+      <div class="list-group list-group-flush ">
+      <li class="list-group-item Courier New">${title}</li>
       </div>`;
   newItemElement.addEventListener('click', deleteItemHandler);
   const listRoot = document.getElementById('item-list');

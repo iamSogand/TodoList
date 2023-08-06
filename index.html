@@ -16,43 +16,50 @@
     }
 
     ul {
-    list-style-type: none;
-}
+      list-style-type: none;
+    }
   </style>
   <body>
-    <div class="header">
-      <p>My Todo List</p>
-    </div>
-
-    <div class="row mt-3 mb-2">
-      <div class="col-5 mx-auto px-1 courierNew">
-        <input
-          type="text"
-          name="item"
-          placeholder="insert items..."
-          class="form-control"
-          id="input"
-          
-        />
+    <div class="container-fluid">
+      <div class="header">
+        <p>My Todo List</p>
       </div>
-    </div>
 
-    <div>
       <div class="row mt-3 mb-2">
-        <div class="col-5 mx-auto px-1">
-          <button class="form-control btn-close courierNew" id="addBtn">ADD</button>
+        <div class="col-5 mx-auto">
+          <div class="row">
+            <div class="col-10 px-1 courierNew">
+              <input
+                type="text"
+                name="item"
+                placeholder="insert items..."
+                class="form-control"
+                id="input"
+              />
+            </div>
+
+            <div class="col-2 px-1 courierNew">
+              <button
+                class="btn btn-primary me-md-2 w-100"
+                type="button"
+                id="addBtn"
+              >
+                ADD
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <main>
-      <div class="row mt-3 mb-2">
-        <div class="col-5 mx-auto px-1">
-          <section id="entry-text" class="card-body">
-            <ul id="item-list" class="list-group list-group-flush"></ul>
-          </section>
+      <main>
+        <div class="row mt-3 mb-2">
+          <div class="col-5 mx-auto px-1">
+            <section id="entry-text" class="card-body">
+              <ul id="item-list" class="list-group list-group-flush"></ul>
+            </section>
+          </div>
         </div>
-      </div>
-    </main>
+      </main>
+    </div>
   </body>
 </html>
