@@ -7,8 +7,10 @@ const items = [];
 function renderNewItemElement(id, title) {
   const newItemElement = document.createElement('li');
   newItemElement.innerHTML = `
+    <div class="form-check">
       <div class="list-group list-group-flush ">
-      <li class="list-group-item Courier New">${title}</li>
+      <li class="list-group-item  courierNew"><label><input type="checkbox"><span>${title} </span></label></li>
+      </div>
       </div>`;
   newItemElement.addEventListener('click', deleteItemHandler);
   const listRoot = document.getElementById('item-list');
@@ -16,20 +18,20 @@ function renderNewItemElement(id, title) {
 }
 
 function clearInput() {
-    userInput.value = '';
-  }
+  userInput.value = '';
+}
 
 function deleteItemHandler(itemId) {
-    let itemIndex = 0;
-    for (const item of items) {
-      if (item.id === itemId) {
-        break;
-      }
-      itemIndex++;
+  let itemIndex = 0;
+  for (const item of items) {
+    if (item.id === itemId) {
+      break;
     }
-    items.splice(itemIndex, 1);
-    const listRoot = document.getElementById('item-list');
-    listRoot.children[itemIndex].remove();
+    itemIndex++;
+  }
+  items.splice(itemIndex, 1);
+  const listRoot = document.getElementById('item-list');
+  listRoot.children[itemIndex].remove();
 }
 
 function addItemHandler() {
